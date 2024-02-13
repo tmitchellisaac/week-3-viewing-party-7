@@ -11,3 +11,5 @@ i = 1
     Movie.create(title: "Movie #{i} Title", rating: rand(1..10), description: "This is a description about Movie #{i}")
     i+=1
 end 
+
+user_1 = User.create!(name: "Isaac", email: "tmitchellisaac@gmail.com", password: "cheese")
