@@ -13,3 +13,4 @@ i = 1
 end 
 
 user_1 = User.create!(name: "Isaac", email: "tmitchellisaac@gmail.com", password: "cheese")
+user_2 = User.create!(name: "John", email: "john@gmail.com", password: "123")
