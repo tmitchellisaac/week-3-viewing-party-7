@@ -1,12 +1,19 @@
-<h2><%= @user.name %>'s Dashboard</h2>
-  <p> Location: <%= cookies[:location] %> </p>
-<%= button_to "Find Top Rated Movies", movies_path(@user), method: :get %><br>
 
-<h3>Viewing Parties:</h3>
+<% if @user %>
+  <h2><%= @user.name %>'s Dashboard</h2>
+    <p> Location: <%= cookies[:location] %> </p>
+  <%= button_to "Find Top Rated Movies", movies_path(@user), method: :get %><br>
 
-<% @user.viewing_parties.each do |vp| %>
-    Title: <%= vp.movie.title %>
-    Duration: <%= vp.duration %>
-    Date: <%= vp.date %>
-    Time: <%= vp.time %>
-<% end %>
+  <h3>Viewing Parties:</h3>
+
+  <% @user.viewing_parties.each do |vp| %>
+      Title: <%= vp.movie.title %>
+      Duration: <%= vp.duration %>
+      Date: <%= vp.date %>
+      Time: <%= vp.time %>
+  <% end %>
+
+  <%= button_to "Log Out", login_path, method: :delete  %>
+
+
+<% end  %>
